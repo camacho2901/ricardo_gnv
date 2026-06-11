@@ -1217,9 +1217,168 @@ p {
     flex-shrink: 0;
 }
 
-/* ------------------------------
-   Footer
-   ------------------------------ */
+/* WhatsApp rápido */
+.quick-wa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: rgba(37,211,102,0.08);
+    border: 1px solid rgba(37,211,102,0.2);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    backdrop-filter: blur(4px);
+}
+
+.quick-wa-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--color-whatsapp);
+    min-width: 0;
+}
+
+.quick-wa-content strong {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+}
+
+.quick-wa-content p {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    margin-top: 0.15rem;
+}
+
+.quick-wa .btn-whatsapp {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* Estimador de precios */
+.price-estimator {
+    background: rgba(245,158,11,0.04);
+    border: 1px solid rgba(245,158,11,0.12);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.price-estimator h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+    color: var(--color-text);
+}
+
+.price-estimator > p {
+    font-size: 0.8125rem;
+    margin-bottom: 1rem;
+}
+
+.price-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.price-row span:first-child {
+    color: var(--color-text-muted);
+}
+
+.price-row span:last-child {
+    color: var(--color-primary-light);
+    font-weight: 600;
+}
+
+.price-estimator small {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.3);
+}
+
+/* Pasos visuales sidebar */
+.steps-sidebar {
+    margin-bottom: 1.5rem;
+}
+
+.steps-sidebar h3 {
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.step-side-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.step-side-item:last-child {
+    border-bottom: none;
+}
+
+.step-side-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(245,158,11,0.1);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    border: 1px solid rgba(245,158,11,0.15);
+}
+
+.step-side-item strong {
+    font-size: 0.875rem;
+    color: var(--color-text);
+}
+
+.step-side-item p {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin-top: 0.1rem;
+}
+
+/* Caja urgente */
+.urgent-box {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(239,68,68,0.06);
+    border: 1px solid rgba(239,68,68,0.15);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1rem;
+    font-size: 0.8125rem;
+    flex-wrap: wrap;
+    color: rgba(255,255,255,0.7);
+}
+
+.urgent-box svg {
+    color: #f59e0b;
+    flex-shrink: 0;
+}
+
+.urgent-box a {
+    color: #ef4444;
+    font-weight: 600;
+    text-decoration: underline;
+    margin-left: auto;
+}
 .footer {
     background-color: #020202;
     color: rgba(255, 255, 255, 0.45);

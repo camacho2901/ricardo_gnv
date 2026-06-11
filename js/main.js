@@ -67,6 +67,48 @@
         var counterEl = document.getElementById('wizardCounter');
         var totalSteps = steps.length;
         var uploadedFiles = [];
+        var formSaveKey = 'ricardoGNV_formData';
+
+        // Auto-guardar y restaurar progreso
+        function saveFormData() {
+            var data = {};
+            var wizardForm = wizard.querySelector('form');
+            if (wizardForm) {
+                var formData = new FormData(wizardForm);
+                formData.forEach(function (val, key) { data[key] = val; });
+                data._currentStep = currentStep;
+                localStorage.setItem(formSaveKey, JSON.stringify(data));
+            }
+        }
+
+        function restoreFormData() {
+            var saved = localStorage.getItem(formSaveKey);
+            if (!saved) return false;
+            try {
+                var data = JSON.parse(saved);
+                var wizardForm = wizard.querySelector('form');
+                if (wizardForm) {
+                    Object.keys(data).forEach(function (key) {
+                        if (key === '_currentStep') return;
+                        var el = wizardForm.querySelector('[name="' + key + '"]');
+                        if (el) el.value = data[key];
+                    });
+                }
+                return data._currentStep || 0;
+            } catch (e) { return false; }
+        }
+
+        // Escuchar cambios en inputs para auto-guardar
+        var wizardFormEl = wizard.querySelector('form');
+        if (wizardFormEl) {
+            wizardFormEl.addEventListener('input', function () { saveFormData(); });
+            wizardFormEl.addEventListener('change', function () { saveFormData(); });
+        }
+
+        // Limpiar al enviar con éxito
+        function clearSavedData() {
+            localStorage.removeItem(formSaveKey);
+        }
 
         var dropZone = document.getElementById('dropZone');
         var fileInput = document.getElementById('fileInput');
@@ -212,7 +254,7 @@
                     pc.addEventListener('animationend', function () { pc.parentElement.classList.remove('input-error'); }, { once: true });
                     return;
                 }
-                // Ocultar pasos y mostrar éxito
+                clearSavedData();
                 steps.forEach(function (s) { s.classList.remove('active'); });
                 stepIndicators.forEach(function (ind) { ind.classList.add('completed'); });
                 if (progressFill) progressFill.style.width = '100%';
@@ -263,7 +305,7 @@
             if (fileInput) fileInput.value = '';
         }
 
-        showStep(0);
+        showStep(restoreFormData() || 0);
     }
 
     // ============================
