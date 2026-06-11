@@ -397,11 +397,8 @@ p {
     position: absolute;
     inset: 0;
     background:
-        /* Barra superior agresiva para tapar marca de agua */
-        linear-gradient(to bottom, #050505 0%, #050505 100px, rgba(5,5,5,0.9) 140px, rgba(5,5,5,0.5) 200px, transparent 280px),
-        /* Viñeta general */
+        linear-gradient(to bottom, #050505 0%, #050505 180px, rgba(5,5,5,0.92) 220px, rgba(5,5,5,0.55) 300px, transparent 380px),
         radial-gradient(ellipse at center, transparent 50%, rgba(5,5,5,0.6) 78%, rgba(5,5,5,0.95) 100%),
-        /* Oscurecer inferior */
         linear-gradient(to bottom, transparent 40%, rgba(5,5,5,0.6) 60%, rgba(5,5,5,0.88) 100%);
     z-index: 1;
 }
