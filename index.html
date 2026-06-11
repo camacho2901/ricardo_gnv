@@ -43,6 +43,29 @@
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="manifest" href="manifest.json">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Ricardo GNV",
+        "description": "Compra de cilindros de Gas Natural Vehicular (GNV) en Bolivia. Pago rápido y seguro.",
+        "telephone": "+59165733706",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Brasilia entre Libertad y Bélgica",
+            "addressLocality": "Cochabamba",
+            "addressCountry": "BO"
+        },
+        "openingHoursSpecification": [
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "13:00" }
+        ],
+        "sameAs": ["https://wa.me/59165733706"],
+        "url": "https://ricardo-gnv.lat"
+    }
+    </script>
 </head>
 <body>
 
@@ -80,6 +103,7 @@
                 </svg>
                 +591 65733706
             </a>
+            <span class="online-indicator"><span class="online-dot"></span> Online</span>
         </div>
     </nav>
 
@@ -411,6 +435,11 @@
                         referrerpolicy="no-referrer-when-downgrade"
                         title="Ubicación de Ricardo GNV en Cochabamba, Bolivia">
                     </iframe>
+                    <div style="text-align:center; margin-top:0.75rem;">
+                        <a href="https://maps.app.goo.gl/krTSwiGTtXcZbYEC7" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size:0.85rem; padding:0.6rem 1.2rem;">
+                            &#128205; Cómo llegar
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -576,6 +605,19 @@
     <button class="scroll-top" id="scrollTop" aria-label="Volver arriba" title="Volver arriba">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
+
+    <!-- Compartir -->
+    <button class="share-float" id="shareBtn" aria-label="Compartir" title="Compartir">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+    </button>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <button class="lightbox-prev" id="lightboxPrev">&lt;</button>
+        <button class="lightbox-next" id="lightboxNext">&gt;</button>
+        <img src="" alt="" id="lightboxImg">
+    </div>
 
     <!-- Toast copiado -->
     <div class="copy-toast" id="copyToast">Teléfono copiado</div>

@@ -432,4 +432,74 @@
             }
         });
     });
+
+    // ============================
+    // 11. Service Worker
+    // ============================
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js');
+    }
+
+    // ============================
+    // 12. Share button
+    // ============================
+    var shareBtn = document.getElementById('shareBtn');
+    if (shareBtn) {
+        shareBtn.addEventListener('click', function () {
+            var shareData = { title: 'Ricardo GNV', text: 'Compra de cilindros GNV en Bolivia - Pago rápido y seguro', url: window.location.href };
+            if (navigator.share) {
+                navigator.share(shareData).catch(function () {});
+            } else {
+                window.open('https://wa.me/?text=' + encodeURIComponent(shareData.text + ' ' + shareData.url), '_blank');
+            }
+        });
+    }
+
+    // ============================
+    // 13. Lightbox galería
+    // ============================
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    var galleryImages = [];
+    var currentImageIndex = 0;
+
+    if (lightbox && lightboxImg) {
+        document.querySelectorAll('.gallery-item img').forEach(function (img) {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', function () {
+                galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
+                currentImageIndex = galleryImages.indexOf(this);
+                lightboxImg.src = this.src;
+                lightboxImg.alt = this.alt;
+                lightbox.classList.add('open');
+            });
+        });
+
+        document.getElementById('lightboxClose').addEventListener('click', function () {
+            lightbox.classList.remove('open');
+        });
+
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) lightbox.classList.remove('open');
+        });
+
+        document.getElementById('lightboxPrev').addEventListener('click', function () {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            lightboxImg.src = galleryImages[currentImageIndex].src;
+            lightboxImg.alt = galleryImages[currentImageIndex].alt;
+        });
+
+        document.getElementById('lightboxNext').addEventListener('click', function () {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            lightboxImg.src = galleryImages[currentImageIndex].src;
+            lightboxImg.alt = galleryImages[currentImageIndex].alt;
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (!lightbox.classList.contains('open')) return;
+            if (e.key === 'Escape') lightbox.classList.remove('open');
+            if (e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click();
+            if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
+        });
+    }
 })();
