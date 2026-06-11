@@ -416,14 +416,14 @@ p {
 /* Cubrir marcas de agua con barras negras en los 4 bordes */
 .wm-cover {
     position: absolute;
-    z-index: 3;
+    z-index: 10;
     pointer-events: none;
-    background: #050505;
+    background: #050505 !important;
 }
-.wm-tl { top: 0; left: 0; width: 100%; height: 80px; }
-.wm-tr { top: 0; right: 0; width: 80px; height: 100%; }
-.wm-bl { bottom: 0; left: 0; width: 100%; height: 80px; }
-.wm-br { left: 0; top: 0; width: 80px; height: 100%; }
+.wm-tl { top: 0; left: 0; width: 100%; height: 130px; }
+.wm-tr { top: 0; right: 0; width: 130px; height: 100%; }
+.wm-bl { bottom: 0; left: 0; width: 100%; height: 130px; }
+.wm-br { left: 0; top: 0; width: 130px; height: 100%; }
 
 .hero .container {
     position: relative;
