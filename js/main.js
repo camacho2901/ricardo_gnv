@@ -243,7 +243,7 @@
             });
         });
 
-        // Submit
+        // Submit: abre WhatsApp con todos los datos
         var quoteWizardForm = wizard.querySelector('form');
         if (quoteWizardForm) {
             quoteWizardForm.addEventListener('submit', function (e) {
@@ -254,18 +254,43 @@
                     pc.addEventListener('animationend', function () { pc.parentElement.classList.remove('input-error'); }, { once: true });
                     return;
                 }
+
                 clearSavedData();
+
+                // Construir mensaje para WhatsApp
+                var estadoMap = { 'sin-fisuras': 'Sin fisuras ni grietas', 'leves-detalles': 'Leves detalles', 'no-se': 'No estoy seguro' };
+                var n = document.getElementById('nombre').value || '';
+                var t = document.getElementById('telefono').value || '';
+                var u = document.getElementById('ubicacion').value || '';
+                var c = document.getElementById('capacidad');
+                var cap = c ? c.options[c.selectedIndex].text : '';
+                var e = document.getElementById('estado');
+                var est = e ? (estadoMap[e.value] || e.options[e.selectedIndex].text) : '';
+                var m = document.getElementById('marca').value || '';
+                var a = document.getElementById('anio').value || '';
+
+                var msg = 'Hola Ricardo GNV, quiero vender mi cilindro:%0A%0A' +
+                    '*Nombre:* ' + encodeURIComponent(n) + '%0A' +
+                    '*Teléfono:* ' + encodeURIComponent(t) + '%0A' +
+                    '*Ubicación:* ' + encodeURIComponent(u) + '%0A' +
+                    '*Capacidad:* ' + encodeURIComponent(cap) + '%0A' +
+                    '*Estado:* ' + encodeURIComponent(est) + '%0A' +
+                    '*Marca:* ' + encodeURIComponent(m) + '%0A' +
+                    '*Año aprox:* ' + encodeURIComponent(a) + '%0A%0A' +
+                    'Te envío las fotos por aquí.';
+
                 steps.forEach(function (s) { s.classList.remove('active'); });
                 stepIndicators.forEach(function (ind) { ind.classList.add('completed'); });
                 if (progressFill) progressFill.style.width = '100%';
                 if (counterEl) counterEl.innerHTML = '<span style="color:var(--color-accent);">&#10003; Completado</span>';
                 if (submitBtn) submitBtn.style.display = 'none';
                 if (prevBtn) prevBtn.style.display = 'none';
-                if (formSuccess) {
-                    formSuccess.hidden = false;
-                    formSuccess.classList.add('form-success-scene');
-                    wizard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
+                if (formSuccess) { formSuccess.hidden = false; }
+
+                // Abrir WhatsApp en nueva pestaña
+                window.open('https://wa.me/59165733706?text=' + msg, '_blank');
+
+                wizard.scrollIntoView({ behavior: 'smooth', block: 'center' });
             });
         }
 
