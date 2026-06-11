@@ -1,0 +1,22 @@
+{
+    "name": "Ricardo GNV",
+    "short_name": "Ricardo GNV",
+    "description": "Compra de cilindros GNV en Bolivia - Pago rápido y seguro",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#050505",
+    "theme_color": "#f59e0b",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "img.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "img.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

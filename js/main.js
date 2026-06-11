@@ -374,4 +374,62 @@
     } else {
         revealElements.forEach(function (el) { el.classList.add('revealed'); });
     }
+
+    // ============================
+    // 7. FAQ toggle
+    // ============================
+    document.querySelectorAll('.faq-question').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var item = this.parentElement;
+            var isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(function (open) { open.classList.remove('open'); });
+            if (!isOpen) item.classList.add('open');
+            this.setAttribute('aria-expanded', !isOpen);
+        });
+    });
+
+    // ============================
+    // 8. Contadores animados
+    // ============================
+    var statItems = document.querySelectorAll('.stat-item h3');
+    if (statItems.length && 'IntersectionObserver' in window) {
+        var statObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'counterReveal 0.8s ease forwards';
+                    statObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        statItems.forEach(function (el) { statObserver.observe(el); });
+    }
+
+    // ============================
+    // 9. Scroll to top
+    // ============================
+    var scrollTopBtn = document.getElementById('scrollTop');
+    if (scrollTopBtn) {
+        window.addEventListener('scroll', function () {
+            scrollTopBtn.classList.toggle('visible', window.scrollY > 500);
+        });
+        scrollTopBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // ============================
+    // 10. Copiar teléfono al portapapeles
+    // ============================
+    var phoneNumber = '+59165733706';
+    var toast = document.getElementById('copyToast');
+    document.querySelectorAll('.copy-phone').forEach(function (el) {
+        el.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(phoneNumber).then(function () {
+                    if (toast) { toast.classList.add('show'); setTimeout(function () { toast.classList.remove('show'); }, 2000); }
+                });
+            }
+        });
+    });
 })();

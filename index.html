@@ -42,6 +42,7 @@
     <!-- Stylesheet -->
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
 
@@ -382,7 +383,7 @@
                             </span>
                             <div>
                                 <strong>Teléfono</strong>
-                                <a href="tel:+59165733706">+591 65733706</a>
+                                <a href="tel:+59165733706" class="copy-phone">+591 65733706</a>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -410,6 +411,80 @@
                         referrerpolicy="no-referrer-when-downgrade"
                         title="Ubicación de Ricardo GNV en Cochabamba, Bolivia">
                     </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         FAQ - PREGUNTAS FRECUENTES
+         ============================ -->
+    <section id="faq" class="faq section-padding" aria-labelledby="faq-title">
+        <div class="container">
+            <div class="text-center section-header">
+                <span class="section-subtitle">FAQ</span>
+                <h2 id="faq-title">Preguntas frecuentes</h2>
+                <p>Respuestas a las dudas más comunes sobre la venta de tu cilindro GNV.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">¿Qué tipo de cilindros compran?</button>
+                    <div class="faq-answer"><p>Compramos cilindros GNV de todas las capacidades (40L a 120L) en buen estado, sin fisuras, sin corrosión y con la válvula de seguridad en condiciones operativas. También evaluamos cilindros con leves detalles estéticos.</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">¿Cómo es el proceso de pago?</button>
+                    <div class="faq-answer"><p>El pago se realiza en el acto al momento de recibir el cilindro. Ofrecemos pago en efectivo o transferencia bancaria, según tu preferencia. Sin demoras ni complicaciones.</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">¿Hacen recojo a domicilio?</button>
+                    <div class="faq-answer"><p>Sí, contamos con servicio de recojo a domicilio en Cochabamba y coordinamos envíos a nivel nacional. Dinos tu ubicación y coordinamos el retiro sin costo adicional para ti.</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">¿Necesito la documentación del cilindro?</button>
+                    <div class="faq-answer"><p>No es obligatorio, pero si tienes la factura de compra, certificado o cualquier documento del cilindro, nos ayuda a darte una mejor valoración. Si no tienes documentación, igual evaluamos tu cilindro.</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">¿Cuánto tardan en responder?</button>
+                    <div class="faq-answer"><p>Respondemos en minutos durante nuestro horario de atención (Lunes a Viernes 08:00-18:00, Sábados 08:00-13:00). Si nos escribes por WhatsApp, la respuesta es casi inmediata.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         TESTIMONIOS
+         ============================ -->
+    <section id="testimonios" class="testimonials section-padding" aria-labelledby="testimonios-title">
+        <div class="container">
+            <div class="text-center section-header">
+                <span class="section-subtitle">Testimonios</span>
+                <h2 id="testimonios-title">Lo que dicen nuestros clientes</h2>
+                <p>Personas reales que ya vendieron su cilindro GNV con nosotros.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Vendí mi cilindro de 60L en menos de un día. Me pagaron en efectivo al momento del recojo. Muy recomendados."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">C</div>
+                        <div><strong>Carlos M.</strong><br><span>Cochabamba</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Tenía un cilindro que ya no usaba hace años. Me lo compraron sin problemas, trato honesto y pago justo."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">M</div>
+                        <div><strong>María L.</strong><br><span>Santa Cruz</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Vinieron a recoger el cilindro a mi taller en El Alto. Todo el proceso fue rápido y sin vueltas. Excelente servicio."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">J</div>
+                        <div><strong>José R.</strong><br><span>El Alto</span></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -495,5 +570,13 @@
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+
+    <!-- Scroll to top -->
+    <button class="scroll-top" id="scrollTop" aria-label="Volver arriba" title="Volver arriba">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+    <!-- Toast copiado -->
+    <div class="copy-toast" id="copyToast">Teléfono copiado</div>
 </body>
 </html>
