@@ -1216,6 +1216,46 @@ p {
     background-repeat: no-repeat;
     flex-shrink: 0;
 }
+
+/* WhatsApp rápido */
+.quick-wa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: rgba(37,211,102,0.08);
+    border: 1px solid rgba(37,211,102,0.2);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+    backdrop-filter: blur(4px);
+}
+
+.quick-wa-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--color-whatsapp);
+    min-width: 0;
+}
+
+.quick-wa-content strong {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+}
+
+.quick-wa-content p {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    margin-top: 0.15rem;
+}
+
+.quick-wa .btn-whatsapp {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
 .footer {
     background-color: #020202;
     color: rgba(255, 255, 255, 0.45);
