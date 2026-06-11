@@ -6,6 +6,18 @@
     'use strict';
 
     // ============================
+    // 0. Lazy load del video después del render
+    // ============================
+    var heroVideo = document.getElementById('heroVideo');
+    if (heroVideo) {
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                heroVideo.play().catch(function () {});
+            }, 300);
+        });
+    }
+
+    // ============================
     // 1. Menú responsive
     // ============================
     const menuToggle = document.getElementById('menuToggle');

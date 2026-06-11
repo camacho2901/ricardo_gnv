@@ -36,7 +36,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- Optimización: precargar recursos críticos -->
+    <link rel="preload" href="img.png" as="image" fetchpriority="high">
+
     <!-- Stylesheet -->
+    <link rel="preload" href="css/styles.css" as="style">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -84,7 +88,7 @@
     <header class="hero" role="banner">
         <!-- Video de fondo -->
         <div class="video-background">
-            <video autoplay muted loop playsinline poster="img.png" id="heroVideo">
+            <video muted loop playsinline poster="img.png" id="heroVideo" preload="none">
                 <source src="INDUSTRIAL.mp4" type="video/mp4">
             </video>
             <div class="video-overlay"></div>
@@ -111,7 +115,7 @@
                 </div>
             </div>
             <div class="hero-image-wrapper reveal">
-                <img src="img.png" alt="Ricardo GNV compra cilindros de Gas Natural Vehicular en Bolivia - Pago rápido y seguro" loading="eager" width="800" height="500">
+                <img src="img.png" alt="Ricardo GNV compra cilindros de Gas Natural Vehicular en Bolivia - Pago rápido y seguro" loading="eager" fetchpriority="high" width="800" height="500">
             </div>
         </div>
 
