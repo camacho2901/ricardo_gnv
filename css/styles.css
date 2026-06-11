@@ -416,13 +416,13 @@ p {
 /* Cubrir marcas de agua en esquinas */
 .wm-cover {
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     pointer-events: none;
 }
-.wm-tl { top: 0; left: 0; width: 140px; height: 90px; background: radial-gradient(circle at top left, rgba(5,5,5,1) 0%, rgba(5,5,5,0.8) 35%, transparent 75%); }
-.wm-tr { top: 0; right: 0; width: 140px; height: 90px; background: radial-gradient(circle at top right, rgba(5,5,5,1) 0%, rgba(5,5,5,0.8) 35%, transparent 75%); }
-.wm-bl { bottom: 0; left: 0; width: 140px; height: 90px; background: radial-gradient(circle at bottom left, rgba(5,5,5,1) 0%, rgba(5,5,5,0.8) 35%, transparent 75%); }
-.wm-br { bottom: 0; right: 0; width: 140px; height: 90px; background: radial-gradient(circle at bottom right, rgba(5,5,5,1) 0%, rgba(5,5,5,0.8) 35%, transparent 75%); }
+.wm-tl { top: 0; left: 0; width: 200px; height: 130px; background: radial-gradient(circle at 0 0, #050505 0%, #050505 45%, rgba(5,5,5,0.95) 55%, rgba(5,5,5,0.6) 75%, transparent 100%); }
+.wm-tr { top: 0; right: 0; width: 200px; height: 130px; background: radial-gradient(circle at 100% 0, #050505 0%, #050505 45%, rgba(5,5,5,0.95) 55%, rgba(5,5,5,0.6) 75%, transparent 100%); }
+.wm-bl { bottom: 0; left: 0; width: 200px; height: 130px; background: radial-gradient(circle at 0 100%, #050505 0%, #050505 45%, rgba(5,5,5,0.95) 55%, rgba(5,5,5,0.6) 75%, transparent 100%); }
+.wm-br { bottom: 0; right: 0; width: 200px; height: 130px; background: radial-gradient(circle at 100% 100%, #050505 0%, #050505 45%, rgba(5,5,5,0.95) 55%, rgba(5,5,5,0.6) 75%, transparent 100%); }
 
 .hero .container {
     position: relative;
